@@ -1,0 +1,10 @@
+{
+  "name": "Paraderos",
+  "platform": "HTML",
+  "version": "2.9",
+  "wabVersion": "2.9",
+  "author": "jamancholam@gmail.com",
+  "description": "This is the widget used in developer guide",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0"
+}
