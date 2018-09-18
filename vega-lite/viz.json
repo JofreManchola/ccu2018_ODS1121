@@ -19,6 +19,11 @@
                             "field": "UPlNombre",
                             "axis": {
                                 "title": "UPZ"
+                            },
+                            "sort": {
+                                "op": "sum",
+                                "field": "Cnt_UPlCod",
+                                "order": "descending"
                             }
                         },
                         "color": {
@@ -64,6 +69,39 @@
                 {
                     "layer": [
                         {
+                            "mark": "bar",
+                            "width": 300,
+                            "height": 300,
+                            "encoding": {
+                                "x": {
+                                    "type": "ordinal",
+                                    "field": "UPlCodigo",
+                                    "axis": {
+                                        "title": "UPZ"
+                                    },
+                                    "sort": {
+                                        "op": "sum",
+                                        "field": "Cnt_UPlCod",
+                                        "order": "descending"
+                                    }
+                                },
+                                "y": {
+                                    "type": "quantitative",
+                                    "field": "Cnt_UPlCod",
+                                    "axis": {
+                                        "title": "Paraderos"
+                                    }
+                                },
+                                "color": {
+                                    "condition": {
+                                        "selection": "selupz",
+                                        "value": "green"
+                                    },
+                                    "value": "gray"
+                                }
+                            }
+                        },
+                        {
                             "mark": "line",
                             "width": 300,
                             "height": 300,
@@ -104,10 +142,14 @@
                                     }
                                 },
                                 "color": {
-                                    "value": "purple"
+                                    "value": "pink"
                                 }
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "layer": [
                         {
                             "mark": "circle",
                             "width": 300,
@@ -118,6 +160,11 @@
                                     "field": "UPlCodigo",
                                     "axis": {
                                         "title": "UPZ"
+                                    },
+                                    "sort": {
+                                        "op": "sum",
+                                        "field": "Cnt_UPlCod",
+                                        "order": "descending"
                                     }
                                 },
                                 "y": {
@@ -128,36 +175,14 @@
                                     }
                                 },
                                 "color": {
-                                    "value": "purple"
+                                    "condition": {
+                                        "selection": "selupz",
+                                        "value": "green"
+                                    }
                                 }
                             }
                         }
                     ]
-                },
-                {
-                    "mark": "circle",
-                    "width": 300,
-                    "height": 300,
-                    "encoding": {
-                        "x": {
-                            "type": "ordinal",
-                            "field": "UPlCodigo",
-                            "axis": {
-                                "title": "UPZ"
-                            }
-                        },
-                        "y": {
-                            "type": "quantitative",
-                            "field": "Cnt_UPlCod",
-                            "axis": {
-                                "title": "Paraderos"
-                            }
-                        },
-                        "color": {
-                            "condition": {"selection": "selupz", "value": "black"},
-                            "value": "purple"
-                        }
-                    }
                 }
             ]
         }
